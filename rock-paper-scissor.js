@@ -49,21 +49,21 @@ rock.addEventListener('click', () => {
     playerSelection = 'rock';
     computerSelection = getComputerChoice();
     console.log(playerSelection, computerSelection);
-    playRound();
+    alert(playRound());
 });
 
 paper.addEventListener('click', () => {
     playerSelection = 'paper';
     computerSelection = getComputerChoice();
     console.log(playerSelection, computerSelection);
-    playRound();
+    alert(playRound());
 });
 
 scissor.addEventListener('click', () => {
     playerSelection = 'scissor';
     computerSelection = getComputerChoice();
     console.log(playerSelection, computerSelection);
-    playRound();
+    alert(playRound());
 });
 
 
