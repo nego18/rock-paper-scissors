@@ -38,16 +38,34 @@ function playRound(playerSelection, computerSelection) {    //function that play
     return result
 }
 
+// Create 3 buttons, one for each player selection
 
-function playGame() {               // function to play the game 5 times
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt('Write your choice: rock, paper or scissor').toLowerCase()
-        let computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection), com, pla, tie);
-    }
-};
+const rock = document.createElement('button');
+const paper = document.createElement('button');
+const scissors = document.createElement('button');
 
-playGame();
+
+rock.addEventListener('click', () => {
+    playerSelection = 'rock';
+    computerSelection = getComputerChoice();
+    console.log(playerSelection, computerSelection);
+    playRound();
+});
+
+paper.addEventListener('click', () => {
+    playerSelection = 'paper';
+    computerSelection = getComputerChoice();
+    console.log(playerSelection, computerSelection);
+    playRound();
+});
+
+scissor.addEventListener('click', () => {
+    playerSelection = 'scissor';
+    computerSelection = getComputerChoice();
+    console.log(playerSelection, computerSelection);
+    playRound();
+});
+
 
 if (com > pla) {            // option to play the game another round or leave it that way
     console.log(`I beat you ${com} to ${pla}. Better luck next time`);
