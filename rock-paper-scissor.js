@@ -38,44 +38,154 @@ function playRound(playerSelection, computerSelection) {    //function that play
     return result
 }
 
-// Create 3 buttons, one for each player selection
+
+// function playGame() {               // function to play the game 5 times
+//     for (let i = 0; i < 5; i++) {
+//         let playerSelection = prompt('Write your choice: rock, paper or scissor').toLowerCase()
+//         let computerSelection = getComputerChoice();
+//         console.log(playRound(playerSelection, computerSelection), com, pla, tie);
+//     }
+// };
+
+// playGame();
 
 const rock = document.createElement('button');
 const paper = document.createElement('button');
-const scissors = document.createElement('button');
+const scissor = document.createElement('button');
+let container = document.querySelector('#contenedor');
+const div = document.createElement('div');
+const comChoice = document.createElement('span');
+const outcome = document.createElement('p');
+const score = document.createElement('p');
 
+rock.innerHTML = 'Rock';
+paper.innerHTML = 'Paper';
+scissor.innerHTML = 'Scissor'
+
+container.appendChild(rock);
+container.append(paper);
+container.appendChild(scissor);
+container.appendChild(div);
+container.appendChild(comChoice);
+container.appendChild(outcome);
+container.appendChild(score);
+
+let c = 0;
 
 rock.addEventListener('click', () => {
     playerSelection = 'rock';
     computerSelection = getComputerChoice();
-    console.log(playerSelection, computerSelection);
-    alert(playRound());
+    comChoice.innerHTML = `I got ${computerSelection}`;
+    outcome.innerHTML = playRound(playerSelection, computerSelection);
+    score.innerHTML = `PLAYER ${pla} | COM ${com} | TIES ${tie}`;
+    c = pla + com + tie;
+
+    if (c === 5) {
+        if (pla > com) {
+            alert("I can't believe it. You WIN");
+            com = 0;
+            pla = 0;
+            tie = 0;
+        } else if (com > pla) {
+            alert("I beat you. Better luck next time")
+            com = 0;
+            pla = 0;
+            tie = 0;
+        } else {
+            if (window.confirm("It's a tie. I can't have it. Go again?")) {
+                alert("All right. Let's go")
+                com = 0;
+                pla = 0;
+                tie = 0;
+            } else {
+                alert('YOU COWARD!!!');
+                com = 0;
+                pla = 0;
+                tie = 0;
+            };
+        };
+    };
 });
 
 paper.addEventListener('click', () => {
     playerSelection = 'paper';
     computerSelection = getComputerChoice();
-    console.log(playerSelection, computerSelection);
-    alert(playRound());
+    comChoice.innerHTML = `I got ${computerSelection}`;
+    outcome.innerHTML = playRound(playerSelection, computerSelection);
+    score.innerHTML = `PLAYER ${pla} | COM ${com} | TIES ${tie}`;
+    c = pla + com + tie;
+
+    if (c === 5) {
+        if (pla > com) {
+            alert("I can't believe it. You WIN");
+            com = 0;
+            pla = 0;
+            tie = 0;
+        } else if (com > pla) {
+            alert("I beat you. Better luck next time")
+            com = 0;
+            pla = 0;
+            tie = 0;
+        } else {
+            if (window.confirm("It's a tie. I can't have it. Go again?")) {
+                alert("All right. Let's go")
+                com = 0;
+                pla = 0;
+                tie = 0;
+            } else {
+                alert('YOU COWARD!!!');
+                com = 0;
+                pla = 0;
+                tie = 0;
+            };
+        };
+    };
 });
 
 scissor.addEventListener('click', () => {
     playerSelection = 'scissor';
     computerSelection = getComputerChoice();
-    console.log(playerSelection, computerSelection);
-    alert(playRound());
+    comChoice.innerHTML = `I got ${computerSelection}`;
+    outcome.innerHTML = playRound(playerSelection, computerSelection);
+    score.innerHTML = `PLAYER ${pla} | COM ${com} | TIES ${tie}`;
+    c = pla + com + tie;
+
+    if (c === 5) {
+        if (pla > com) {
+            alert("I can't believe it. You WIN");
+            com = 0;
+            pla = 0;
+            tie = 0;
+        } else if (com > pla) {
+            alert("I beat you. Better luck next time")
+            com = 0;
+            pla = 0;
+            tie = 0;
+        } else {
+            if (window.confirm("It's a tie. I can't have it. Go again?")) {
+                alert("All right. Let's go")
+                com = 0;
+                pla = 0;
+                tie = 0;
+            } else {
+                alert('YOU COWARD!!!');
+                com = 0;
+                pla = 0;
+                tie = 0;
+            };
+        };
+    };
 });
 
-
-if (com > pla) {            // option to play the game another round or leave it that way
-    console.log(`I beat you ${com} to ${pla}. Better luck next time`);
-} else if (pla > com) {
-    console.log(`I can't believe it. You Win ${pla} to ${com}`);
-} else {
-    if (window.confirm("It's a tie. I can't have it. Go again?")) {
-        alert("All right. Let's go");
-        playGame()
-    } else {
-        alert('YOU COWARD!!!');
-    }
-}
+// if (com > pla) {            // option to play the game another round or leave it that way
+//     console.log(`I beat you ${com} to ${pla}. Better luck next time`);
+// } else if (pla > com) {
+//     console.log(`I can't believe it. You Win ${pla} to ${com}`);
+// } else {
+//     if (window.confirm("It's a tie. I can't have it. Go again?")) {
+//         alert("All right. Let's go");
+//         playGame()
+//     } else {
+//         alert('YOU COWARD!!!');
+//     }
+// }
